@@ -141,9 +141,9 @@ DNS: `http://k8s-default-ecommerc-8a588012f9-709041982.us-east-1.elb.amazonaws.c
 # DATA PIPELINE, MANAGEMENT AND ANALYSIS:
 Data plays a crucial role in informing business decisions. In the context of our e-commerce application, the database employed is SQLite3. To derive meaningful insights, a systematic approach of Extracting, Transforming, and Loading (ETL) the data is undertaken. The raw data is extracted from the application and loaded into Jupyter Lab for further processing.
 
-Understanding the data is paramount. The database schema, accessible [here](data_engineer/ecommerce_data_schema.drawio.png), serves as a blueprint for comprehending how different tables interconnect. Prior to transformation, [queries are executed](D9_queries.ipynb) to scrutinize the tables for duplicate entries, null values, and other data anomalies that necessitate cleaning.
+Understanding the data is paramount. The database schema, accessible [here](data_engineer/ecommerce_data_schema.drawio.png), serves as a blueprint for comprehending how different tables interconnect. Prior to transformation, [queries are executed](data_engineer/D9_queries.ipynb) to scrutinize the tables for duplicate entries, null values, and other data anomalies that necessitate cleaning.
 
-Once the data nuances are grasped, the subsequent step involves cleaning the data and generating views from it. It's imperative to note that modifications to the original tables should only be made with explicit approval to maintain data integrity. Subsequently, the data undergoes analysis to uncover valuable insights. The culmination of this process involves translating these insights into actionable visualizations, as demonstrated in the [data_engineer/Revenue Analysis](Revenue_Analysis.pdf) report.
+Once the data nuances are grasped, the subsequent step involves cleaning the data and generating views from it. It's imperative to note that modifications to the original tables should only be made with explicit approval to maintain data integrity. Subsequently, the data undergoes analysis to uncover valuable insights. The culmination of this process involves translating these insights into actionable visualizations, as demonstrated in the [data_engineer/Revenue Analysis](data_engineer/Revenue_Analysis.pdf) report.
 
 # Issues:
 
