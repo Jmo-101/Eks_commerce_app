@@ -23,8 +23,8 @@ The user data script which ran upon initialization of the instance was responsib
 
 This instance was utilized in manually installing the cluster. To create the cluster the following command was used:
 
-``  eksctl create cluster cluster01  --vpc-private-subnets="your-subnets"  --vpc-public-subnets="your-subnets"--without-nodegroup
-``
+``eksctl create cluster cluster01  --vpc-private-subnets="your-subnets"  --vpc-public-subnets="your-subnets"--without-nodegroup``
+
 “Your-subnets” was replaced with the subnet id of the respective private and public subnets from the main infrastructure and are separated by commas. 
 
 After the cluster was successfully created, the following command was run to create two t2.medium nodes.
@@ -34,7 +34,8 @@ After the cluster was successfully created, the following command was run to cre
 ### Configuring ALB Controller
 The ALB controller is configured within the Jenkins Kubernetes agent instance. 
 
-1. In order to configure the ALB Controller,  it is necessary to first add OpenID connect to the cluster. Enter this command to add OpenID to the cluster: 
+1. In order to configure the ALB Controller,  it is necessary to first add OpenID connect to the cluster. Enter this command to add OpenID to the cluster:
+
 ``eksctl utils associate-iam-oidc-provider --cluster cluster04 --approve``
 
 Then to make sure that the OpenID is connected to the cluster, run the following command:
