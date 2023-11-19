@@ -17,3 +17,14 @@
 # Purpose:
 
 The purpose of this deployment was to be able to successfully deploy an e-commerce application using Kubernetes. In order to achieve this, we used tools such as Terraform, Jenkins, Docker, and AWS EKS.
+
+# Terraform:
+
+# DockerFiles:
+
+# EKS:
+
+
+# Jenkins:
+
+# CloudWatch Agent:
