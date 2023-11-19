@@ -7,7 +7,7 @@
 
 # Group Members & Roles:
 
-Annie Lam - Data Ops engineer
-Kevin Edmond - System administrator
-Sameen Khan - Chief Architect
-Jorge Molina - Project Manager
+- Annie Lam - Data Ops engineer
+- Kevin Edmond - System administrator
+- Sameen Khan - Chief Architect
+- Jorge Molina - Project Manager
