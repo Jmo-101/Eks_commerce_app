@@ -18,7 +18,28 @@
 
 The purpose of this deployment was to be able to successfully deploy an e-commerce application using Kubernetes. In order to achieve this, we used tools such as Terraform, Jenkins, Docker, and AWS EKS.
 
-# Terraform:
+# Steps
+### Terraform (Sameen)
+Terraform is a tool that helps you create and manage your infrastructure. It allows you to define the desired state of your infrastructure in a configuration file, and then Terraform takes care of provisioning and managing the resources to match that configuration. This makes it easier to automate and scale your infrastructure and ensures that it remains consistent and predictable.
+
+### Jenkins Agent Infrastructure (Sameen)
+Use Terraform to spin up the Jenkins Agent Infrastructure and to include the installs needed for the Jenkins manager instance, the install needed for the Jenkins Docker agent instance, and the install needed for the Jenkins Kubernetes agent instance.
+
+Terraform was also utilized to launch a separate infrastructure Kubernetes infrastructure (main infrastructure). The infrastructure consisted of a VPC, 2 public subnets, and 2 private subnets each within their own availability zone (us-east-1a and us-east-1b). An internet gateway as well as a NAT gateway were also configured. 
+
+Preparing the Jenkins Kubernetes agent instance 
+The user data script which ran upon initialization of the instance was responsible for installing EKS, Kubectl, AWSCLI, and the default-jre dependency. 
+
+This instance was utilized in manually installing the cluster. To create the cluster the following command was used:
+
+``eksctl create cluster cluster01  --vpc-private-subnets="your-subnets"  --vpc-public-subnets="your-subnets"--without-nodegroup``
+
+“Your-subnets” was replaced with the subnet id of the respective private and public subnets from the main infrastructure and are separated by commas. 
+
+After the cluster was successfully created, the following command was run to create two t2.medium nodes.
+
+``eksctl create nodegroup --cluster cluster02 --node-private-networking --node-type t2.medium --nodes 2``
+
 
 # DockerFiles:
 
@@ -40,7 +61,6 @@ DNS: `http://k8s-default-ecommerc-8a588012f9-709041982.us-east-1.elb.amazonaws.c
 ![frontend_app2](images/frontend_app2.png)<br>
 ![frontend_app](images/frontend_app.png)<br>
 
-# Jenkins:
 
 # CloudWatch Agent:
 
